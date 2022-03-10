@@ -41,8 +41,13 @@ class ProductIO:
             print("Wrong input, please try something like '10 book at 9.99' or '1 imported banana at 1.99'")
 
     def print_receipt(self):
-        receipt = self.shopping_cart.get_receipt()
-        for product in receipt.get_listed_products():
-            print(product)
-        print("Sales Taxes: {}".format(receipt.get_total_tax()))
-        print("Total: {}".format(receipt.get_total_price()))
+        try:
+            receipt = self.shopping_cart.get_receipt()
+            for product in receipt.get_listed_products():
+                print(product)
+            print("Sales Taxes: {}".format(receipt.get_total_tax()))
+            print("Total: {}".format(receipt.get_total_price()))
+        except Exception as e:
+            print("An error occurred -> {}".format(e.__str__()))
+        finally:
+            print("No receipt found!")
