@@ -20,33 +20,33 @@ class TestProduct(TestCase):
 
     def test_create_product_from_input(self):
         # Testcase for test_product_1
-        self.assertNotEqual(type(self.test_product_1.get_product_amount()), float, "Shouldn't be a float")
-        self.assertEqual(self.test_product_1.get_product_amount(), 0, "Should be 0, because wrong input")
+        self.assertNotEqual(type(self.test_product_1.product_amount), float, "Shouldn't be a float")
+        self.assertEqual(self.test_product_1.product_amount, 0, "Should be 0, because wrong input")
 
         # Testcase for test_product_2
-        self.assertEqual(type(self.test_product_2.get_product_amount()), int, "Should be an Integer")
-        self.assertEqual(self.test_product_2.get_product_name(), "cd", "Should be string: cd")
-        self.assertEqual(self.test_product_2.get_product_price(), 9.99, "Should be float: 9.99")
-        self.assertEqual(type(self.test_product_2.get_product_price()), float, "Should be a float")
-        self.assertEqual(self.test_product_2.get_product_tax(), 1.0, "Should be float: 1.0 (0.999 rounded up to 1.0)")
+        self.assertEqual(type(self.test_product_2.product_amount), int, "Should be an Integer")
+        self.assertEqual(self.test_product_2.product_name, "cd", "Should be string: cd")
+        self.assertEqual(self.test_product_2.product_price, 9.99, "Should be float: 9.99")
+        self.assertEqual(type(self.test_product_2.product_price), float, "Should be a float")
+        self.assertEqual(self.test_product_2.product_tax, 1.0, "Should be float: 1.0 (0.999 rounded up to 1.0)")
 
         # Testcase for test_product_3
-        self.assertEqual(type(self.test_product_3.get_product_amount()), int, "Should be an Integer")
-        self.assertEqual(self.test_product_3.get_product_name(), "cd", "Should be string: cd")
-        self.assertEqual(self.test_product_3.get_product_price(), 9.99, "Should be float: 9.99")
-        self.assertEqual(type(self.test_product_3.get_product_price()), float, "Should be a float")
-        self.assertEqual(self.test_product_3.get_product_tax(), 1.5, "Should be float: 1.5 (1.498 rounded up to 1.5)")
+        self.assertEqual(type(self.test_product_3.product_amount), int, "Should be an Integer")
+        self.assertEqual(self.test_product_3.product_name, "cd", "Should be string: cd")
+        self.assertEqual(self.test_product_3.product_price, 9.99, "Should be float: 9.99")
+        self.assertEqual(type(self.test_product_3.product_price), float, "Should be a float")
+        self.assertEqual(self.test_product_3.product_tax, 1.5, "Should be float: 1.5 (1.498 rounded up to 1.5)")
 
         # Testcase for test_product_4
-        self.assertEqual(type(self.test_product_4.get_product_amount()), int, "Should be an Integer")
-        self.assertEqual(self.test_product_4.get_product_name(), "book", "Should be string: book")
-        self.assertEqual(self.test_product_4.get_product_price(), 12.49, "Should be float: 12.49")
-        self.assertEqual(type(self.test_product_4.get_product_price()), float, "Should be a float")
-        self.assertEqual(self.test_product_4.get_product_tax(), 0.0, "Should be float: 0")
+        self.assertEqual(type(self.test_product_4.product_amount), int, "Should be an Integer")
+        self.assertEqual(self.test_product_4.product_name, "book", "Should be string: book")
+        self.assertEqual(self.test_product_4.product_price, 12.49, "Should be float: 12.49")
+        self.assertEqual(type(self.test_product_4.product_price), float, "Should be a float")
+        self.assertEqual(self.test_product_4.product_tax, 0.0, "Should be float: 0")
 
         # Testcase for test_product_5
-        self.assertEqual(type(self.test_product_5.get_product_amount()), int, "Should be an Integer")
-        self.assertEqual(self.test_product_5.get_product_name(), "chocolate bar", "Should be string: chocolate bar")
-        self.assertEqual(self.test_product_5.get_product_price(), 24.98, "Should be float: 24.98")
-        self.assertEqual(type(self.test_product_5.get_product_price()), float, "Should be a float")
-        self.assertEqual(self.test_product_5.get_product_tax(), 0.0, "Should be float: 0")
+        self.assertEqual(type(self.test_product_5.product_amount), int, "Should be an Integer")
+        self.assertEqual(self.test_product_5.product_name, "chocolate bar", "Should be string: chocolate bar")
+        self.assertEqual(self.test_product_5.product_price, 24.98, "Should be float: 24.98")
+        self.assertEqual(type(self.test_product_5.product_price), float, "Should be a float")
+        self.assertEqual(self.test_product_5.product_tax, 0.0, "Should be float: 0")
