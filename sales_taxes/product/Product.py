@@ -11,18 +11,38 @@ class Product:
             product_elements = valid_product_input.split(" ")
             self._create_product(product_elements)
         except SyntaxError as e:
-            print("Wrong input, please try something like '10 book at 9.99' or '1 imported banana at 1.99' -> {}".format(e))
+            self._print_wrong_input(e)
+
+    def _print_wrong_input(self, error=None):
+        print("Please try again. Use '10 book at 9.99' or '1 imported banana at 1.99' -> {}".format(error))
 
     def _create_product(self, product_elements):
         self.__set_product_amount(product_elements[0])
+        self.__set_product_name(product_elements)
         self.__set_when_imported()
 
     def __set_product_amount(self, amount):
-        # If error, exception is thrown
         try:
             self.__product_amount = int(amount)
-        except:
-            print("huhu")
+        except Exception as e:
+            self._print_wrong_input(e)
+
+    def __set_product_name(self, product_elements):
+        self.__product_name = self.__clear_input_for_product_name(product_elements)
+
+    def __clear_input_for_product_name(self, product_elements):
+        input_without_amount = product_elements[1:]
+        input_without_imported = input_without_amount
+        if self.__product_imported:
+            input_without_imported = input_without_amount[1:]
+        input_without_price = input_without_imported[:-1]
+        cleared_input = input_without_price[:-1]
+        product_name = ""
+        for element in cleared_input:
+            product_name += element + " "
+        product_name = product_name[:-1]
+
+        return product_name
 
     def __set_when_imported(self):
         pass
@@ -49,6 +69,7 @@ class Product:
     @property
     def product_tax(self):
         return self.__product_tax
+
 
 
 
