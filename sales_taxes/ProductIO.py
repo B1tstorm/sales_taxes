@@ -1,7 +1,7 @@
 from sales_taxes.ShoppingCart import ShoppingCart
 
 
-class ProductIo:
+class ProductIO:
     def __init__(self):
         self.__user_input = ""
         self.__shoppingCart = ShoppingCart
