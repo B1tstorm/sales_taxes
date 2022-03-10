@@ -1,6 +1,5 @@
 from sales_taxes.Receipt import Receipt
-from sales_taxes.product import Product
-
+from sales_taxes.product.Product import Product
 
 
 class ShoppingCart:
