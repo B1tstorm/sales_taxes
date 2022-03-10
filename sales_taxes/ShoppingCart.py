@@ -1,4 +1,4 @@
-from sales_taxes import Product
+from sales_taxes.product import Product
 from sales_taxes import Receipt
 
 
