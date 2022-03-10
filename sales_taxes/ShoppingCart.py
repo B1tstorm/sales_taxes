@@ -1,11 +1,12 @@
+from sales_taxes.Receipt import Receipt
 from sales_taxes.product import Product
-from sales_taxes import Receipt
+
 
 
 class ShoppingCart:
     def __init__(self):
         self.__products = [Product]
-        self.__receipt = Receipt
+        self.__receipt = Receipt()
 
     def add_to_cart(self, product_input):
         pass
