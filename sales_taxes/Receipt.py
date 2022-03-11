@@ -1,7 +1,7 @@
 class Receipt:
     def __init__(self):
-        self.__total_price = 0.0
         self.__total_tax = 0.0
+        self.__total_price = 0.0
         self.__product_list = []
 
     @property
@@ -35,13 +35,12 @@ class Receipt:
         total_price_taxes_included = 0.0
         for product in products:
             total_price_taxes_included += product.product_price
+        total_price_taxes_included += self.total_tax
 
         return total_price_taxes_included
 
-    def set_products_list(self, products):
+    @products_list.setter
+    def products_list(self, products):
         product_strings = []
         for product in products:
-            product_strings.append(product.product_name)
-        print(product_strings)
-
-
+            product_strings.append(product.product_string)
