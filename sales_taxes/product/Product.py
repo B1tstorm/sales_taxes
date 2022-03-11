@@ -11,9 +11,9 @@ class Product:
 
         self.TAX_RATE = 0.1
 
-    def create_product_from_input(self, valid_product_input):
+    def create_product_from_input(self, product_input):
         try:
-            product_elements = valid_product_input.split(" ")
+            product_elements = product_input.split(" ")
             self._create_product(product_elements)
         except SyntaxError as e:
             self._print_wrong_input(e)

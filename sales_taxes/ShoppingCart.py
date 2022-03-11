@@ -13,9 +13,16 @@ class ShoppingCart:
         self.__receipt = Receipt()
 
     def add_to_cart(self, product_input):
-        product = self.__get_instance_by_product_category(product_input)
-        product.create_product_from_input(product_input)
-        self.__products.append(product)
+        if self.__prevalidate_input(product_input):
+            product = self.__get_instance_by_product_category(product_input)
+            product.create_product_from_input(product_input)
+            self.__products.append(product)
+
+    def __prevalidate_input(self, product_input):
+        if len(product_input) > 7:
+            return True
+        
+        return False
 
     def __get_instance_by_product_category(self, product_input):
         category = self.__get_product_category(product_input)

@@ -22,7 +22,6 @@ class ProductIO:
             print("Error: Invalid argument: {}".format(e))
 
     def __validate_input(self, user_input):
-        user_input = user_input
         if self.__is_not_to_long_input(user_input) and self.__is_not_to_short_input(user_input):
             self.shopping_cart.add_to_cart(user_input)
         else:
