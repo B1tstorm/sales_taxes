@@ -72,9 +72,11 @@ class Product:
 
         return self._round_up_taxes(total_taxes)
 
-    def _round_up_taxes(self, taxes, decimals=1):
+    def _round_up_taxes(self, taxes, decimals=2):
         multiplier = 10 ** decimals
-        return math.floor(taxes * multiplier + 0.05) / multiplier
+        ceiled = math.ceil(taxes * multiplier) / multiplier
+
+        return ceiled
 
     def _print_wrong_input(self, error=None):
         print("Please try again. Use '10 book at 9.99' or '1 imported banana at 1.99' -> {}".format(error))
