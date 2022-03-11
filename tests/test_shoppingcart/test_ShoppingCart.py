@@ -20,5 +20,5 @@ class TestShoppingCart(TestCase):
         self.assertEqual(len(self.test_shopping_cart.products), 1)
 
     def test_get_receipt(self):
-        self.test_receipt = self.test_shopping_cart.get_receipt()
+        self.test_receipt = self.test_shopping_cart.receipt
         self.assertIsInstance(self.test_receipt, Receipt, "Should be instance of Receipt")

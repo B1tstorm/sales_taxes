@@ -10,7 +10,7 @@ from sales_taxes.product.Product import Product
 class ShoppingCart:
     def __init__(self):
         self.__products = []
-        self.__receipt = Receipt()
+        #self.__receipt = Receipt()
 
     def add_to_cart(self, product_input):
         if self.__prevalidate_input(product_input):
@@ -21,7 +21,7 @@ class ShoppingCart:
     def __prevalidate_input(self, product_input):
         if len(product_input) > 7:
             return True
-        
+
         return False
 
     def __get_instance_by_product_category(self, product_input):
@@ -51,12 +51,16 @@ class ShoppingCart:
         return "default"
 
     @property
-    def get_receipt(self):
-        # TODO: - call __create_receipt()
-        return self.__receipt
+    def receipt(self):
+        return self.__create_receipt()
 
-    def __create_receipt(self, products):
-        return [""]
+    def __create_receipt(self):
+        receipt = Receipt()
+        receipt.total_tax = self.products
+        receipt.total_price = self.products
+        receipt.products_list = self.products
+
+        return receipt
 
     @property
     def products(self):

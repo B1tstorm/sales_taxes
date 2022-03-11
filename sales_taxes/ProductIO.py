@@ -41,11 +41,11 @@ class ProductIO:
 
     def print_receipt(self):
         try:
-            receipt = self.shopping_cart.get_receipt()
-            for product in receipt.get_listed_products():
+            receipt = self.shopping_cart.receipt
+            for product in receipt.products_list:
                 print(product)
-            print("Sales Taxes: {}".format(receipt.get_total_tax()))
-            print("Total: {}".format(receipt.get_total_price()))
+            print("Sales Taxes: {}".format(receipt.total_tax))
+            print("Total: {}".format(receipt.total_price))
         except Exception as e:
             print("An error occurred -> {}".format(e.__str__()))
         finally:

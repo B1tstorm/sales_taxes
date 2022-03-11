@@ -10,6 +10,7 @@ class Product:
         self.__product_tax = 0.0
 
         self.TAX_RATE = 0.1
+        self.product_string = ""
 
     def create_product_from_input(self, product_input):
         try:
