@@ -14,7 +14,6 @@ def main():
             io.print_receipt()
             break
 
-
     # To kill python-console
     exit(0)
 

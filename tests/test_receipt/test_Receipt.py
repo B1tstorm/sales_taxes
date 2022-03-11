@@ -14,11 +14,11 @@ class TestReceipt(TestCase):
         self.test_product_2 = Medical()
         self.test_product_2.create_product_from_input("1 packet of headache pills at 9.75")
         self.test_products = [self.test_product_1, self.test_product_2]
-        self.test_receipt.set_total_tax(self.test_products)
-        self.test_receipt.set_total_price(self.test_products)
+        #self.test_receipt.calculate_total_taxes(self.test_products)
 
     def test_set_total_tax(self):
-        self.assertEqual(self.test_receipt.get_total_tax(), 0.5, "Should be 0.5")
+        self.test_receipt.total_tax = self.test_products
+        self.assertEqual(self.test_receipt.total_tax, 0.5, "Should be 0.5")
 
     def test_set_total_price(self):
-        self.assertEqual(self.test_receipt.get_total_price(), 20.25, "Should be 20.25, Tax + Products")
+        self.assertEqual(self.test_receipt.total_price, 20.25, "Should be 20.25, Tax + Products")
