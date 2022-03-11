@@ -6,6 +6,7 @@ class Book(Product):
         super().__init__()
         self.__isbn = ""
         self.__book_authors = [""]
+        self.TAX_RATE = 0.0
 
     def get_isbn(self):
         return self.__isbn

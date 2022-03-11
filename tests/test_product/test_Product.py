@@ -47,6 +47,6 @@ class TestProduct(TestCase):
         # Testcase for test_product_5
         self.assertEqual(type(self.test_product_5.product_amount), int, "Should be an Integer")
         self.assertEqual(self.test_product_5.product_name, "chocolate bar", "Should be string: chocolate bar")
-        self.assertEqual(self.test_product_5.product_price, 24.98, "Should be float: 24.98")
+        self.assertEqual(self.test_product_5.product_price, 1.7, "Should be float: 1.7")
         self.assertEqual(type(self.test_product_5.product_price), float, "Should be a float")
         self.assertEqual(self.test_product_5.product_tax, 0.0, "Should be float: 0")
