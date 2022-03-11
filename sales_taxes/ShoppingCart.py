@@ -41,10 +41,10 @@ class ShoppingCart:
         if lower_input.__contains__("book"):
             print("Its a book")
             return "book"
-        if lower_input.__contains__("pills"):
+        if lower_input.__contains__("pill"):
             print("Its medicine")
             return "medicine"
-        if lower_input.__contains__("food"):
+        if lower_input.__contains__("chocolate"):
             print("Its food")
             return "food"
 

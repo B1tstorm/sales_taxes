@@ -48,5 +48,4 @@ class ProductIO:
             print("Total: {}".format(receipt.total_price))
         except Exception as e:
             print("An error occurred -> {}".format(e.__str__()))
-        finally:
-            print("No receipt found!")
+

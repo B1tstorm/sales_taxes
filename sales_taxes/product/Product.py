@@ -10,10 +10,11 @@ class Product:
         self.__product_tax = 0.0
 
         self.TAX_RATE = 0.1
-        self.product_string = ""
+        self.__product_string = ""
 
     def create_product_from_input(self, product_input):
         try:
+            self.__product_string = product_input
             product_elements = product_input.split(" ")
             self._create_product(product_elements)
         except SyntaxError as e:
@@ -24,7 +25,6 @@ class Product:
         self.__set_when_imported(product_elements)
         self.__set_product_name(product_elements)
         self.__set_product_price(product_elements[-1])
-
         self.__set_product_tax()
 
     def __set_product_amount(self, amount):
@@ -74,7 +74,7 @@ class Product:
 
     def _round_up_taxes(self, taxes, decimals=1):
         multiplier = 10 ** decimals
-        return math.floor(taxes * multiplier + 0.5) / multiplier
+        return math.floor(taxes * multiplier + 0.05) / multiplier
 
     def _print_wrong_input(self, error=None):
         print("Please try again. Use '10 book at 9.99' or '1 imported banana at 1.99' -> {}".format(error))
@@ -98,6 +98,10 @@ class Product:
     @property
     def product_tax(self):
         return self.__product_tax
+
+    @property
+    def product_string(self):
+        return self.__product_string
 
 
 
