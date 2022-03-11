@@ -41,6 +41,6 @@ class Receipt:
 
     @products_list.setter
     def products_list(self, products):
-        product_strings = []
         for product in products:
-            product_strings.append(product.product_string)
+            #product_strings.append(product.product_string)
+            self.__product_list.append(product.product_string)
